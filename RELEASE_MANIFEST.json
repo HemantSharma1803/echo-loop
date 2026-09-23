@@ -4,7 +4,7 @@
   "build_target": "Static web / GitHub Pages",
   "qa": {
     "relative_import_scan": "passed",
-    "runtime_build": "not executed in this environment because npm registry packages were unavailable",
+    "runtime_build": "Not executed in this offline environment; dependency installation could not reach the npm registry. GitHub Actions performs the authoritative install, type-check, and production build.",
     "high_impact_fixes_applied": [
       "stabilized Canvas requestAnimationFrame lifecycle",
       "added cleanup for NarrativeSystem subscriptions",
@@ -12,8 +12,14 @@
       "added GitHub Pages Actions deployment",
       "configured relative Vite production asset base",
       "reworked README for production/static deployment",
-      "removed API-key requirement from runtime documentation"
-    ]
+      "removed API-key requirement from runtime documentation",
+      "removed unused runtime/server dependencies from the static client build",
+      "added npm legacy-peer-deps configuration for GitHub Actions dependency installation",
+      "moved GitHub Actions build to Node 22",
+      "removed stale Bun lockfile after dependency cleanup",
+      "hardened Vite config for ESM-compatible path resolution"
+    ],
+    "dependency_install": "GitHub Actions uses npm install with legacy-peer-deps to avoid the strict peer-resolution failure shown in the provided run."
   },
   "important": "Run npm install, npm run lint and npm run build once on a normal networked Node environment before the final GitHub push."
 }
