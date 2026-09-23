@@ -1,0 +1,19 @@
+{
+  "project": "ECHO//LOOP",
+  "release": "EVOX 1.0 submission-ready build",
+  "build_target": "Static web / GitHub Pages",
+  "qa": {
+    "relative_import_scan": "passed",
+    "runtime_build": "not executed in this environment because npm registry packages were unavailable",
+    "high_impact_fixes_applied": [
+      "stabilized Canvas requestAnimationFrame lifecycle",
+      "added cleanup for NarrativeSystem subscriptions",
+      "fixed manual-reset telemetry counting during reset transitions",
+      "added GitHub Pages Actions deployment",
+      "configured relative Vite production asset base",
+      "reworked README for production/static deployment",
+      "removed API-key requirement from runtime documentation"
+    ]
+  },
+  "important": "Run npm install, npm run lint and npm run build once on a normal networked Node environment before the final GitHub push."
+}
